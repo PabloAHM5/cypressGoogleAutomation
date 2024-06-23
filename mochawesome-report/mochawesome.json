@@ -1,0 +1,196 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-23T17:30:28.057Z",
+    "end": "2024-06-23T17:30:41.499Z",
+    "duration": 13442,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bfe282d8-f2a7-4c40-85db-5d7af97119ac",
+      "title": "",
+      "fullFile": "cypress/e2e/integration/googleSearch.cy.js",
+      "file": "cypress/e2e/integration/googleSearch.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c3269456-6b28-4bbe-b5ab-9bf71116ebc1",
+          "title": "Google Search Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "2e65f84d-3d78-407a-9fb0-b680c5407629",
+              "title": "Successful search",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should search for a term using the search bar",
+                  "fullTitle": "Google Search Functionality Successful search should search for a term using the search bar",
+                  "timedOut": null,
+                  "duration": 3703,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.url().should('include', '/search');",
+                  "err": {},
+                  "uuid": "c38786ee-e7ba-4b61-a10f-49c091e4ca71",
+                  "parentUUID": "2e65f84d-3d78-407a-9fb0-b680c5407629",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display the number of results found",
+                  "fullTitle": "Google Search Functionality Successful search should display the number of results found",
+                  "timedOut": null,
+                  "duration": 2443,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"Number of search results: Cerca de 811,000,000 resultados (0.24 segundos) \"",
+                  "code": "cy.get('div#result-stats').should('exist').then($stats => {\n  const resultText = $stats.text();\n  cy.log('Number of search results: ' + resultText);\n  console.log('Number of search results: ' + resultText);\n  cy.addContext('Number of search results: ' + resultText);\n});",
+                  "err": {},
+                  "uuid": "cfe9a620-0849-47e8-8230-ae0423d33c2d",
+                  "parentUUID": "2e65f84d-3d78-407a-9fb0-b680c5407629",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "should display the time taken for the search",
+                  "fullTitle": "Google Search Functionality Successful search should display the time taken for the search",
+                  "timedOut": null,
+                  "duration": 2701,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": "\"Search time:  (0.25 segundos) \"",
+                  "code": "cy.get('nobr').should('exist').and('contain', 'segundos').then($time => {\n  const timeText = $time.text();\n  cy.log('Search time: ' + timeText);\n  console.log('Search time: ' + timeText);\n  cy.addContext('Search time: ' + timeText);\n});",
+                  "err": {},
+                  "uuid": "6600a6c8-cdb6-407d-907c-eb77057e914c",
+                  "parentUUID": "2e65f84d-3d78-407a-9fb0-b680c5407629",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c38786ee-e7ba-4b61-a10f-49c091e4ca71",
+                "cfe9a620-0849-47e8-8230-ae0423d33c2d",
+                "6600a6c8-cdb6-407d-907c-eb77057e914c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8847,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b1fe6d12-a1ae-4a90-8f14-014b11877bc6",
+              "title": "Unsuccessful search",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "should display an error message if no results are found",
+                  "fullTitle": "Google Search Functionality Unsuccessful search should display an error message if no results are found",
+                  "timedOut": null,
+                  "duration": 2907,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('div#result-stats').should('exist').and('contain', 'Cerca de 0 resultados');",
+                  "err": {},
+                  "uuid": "bc876b34-4c7f-4142-b4e0-987f24cac248",
+                  "parentUUID": "b1fe6d12-a1ae-4a90-8f14-014b11877bc6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bc876b34-4c7f-4142-b4e0-987f24cac248"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2907,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
